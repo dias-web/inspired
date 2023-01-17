@@ -1,6 +1,5 @@
 export const getData = async (urlApi, param, cbError = () => {}) => {
   try {
-    console.log(param);
     const url = new URL(urlApi);
 
     if (param && typeof param === "object") {
