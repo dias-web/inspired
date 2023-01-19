@@ -2,15 +2,14 @@ import "./index.html";
 import "./index.scss";
 
 import { router } from "./modules/router";
-import { mainPage } from "./modules/mainPage/mainPage";
+import { mainPage } from "./modules/mainPage";
 import { renderFooter } from "./modules/render/renderFooter";
 import { renderHeader } from "./modules/render/renderHeader";
-import { womanMainPage } from "./modules/mainPage/womanMainPage";
-import { manMainPage } from "./modules/mainPage/manMainPage";
 import { getData } from "./modules/getData";
 import { API_URL, DATA } from "./modules/const";
 import { createCssColors } from "./modules/createCssColors";
 import { createElement } from "./modules/createElement";
+import { categoryPage } from "./modules/categoryPage";
 
 const init = async () => {
   try {
@@ -29,21 +28,20 @@ const init = async () => {
     });
 
     router.on("women", () => {
-      womanMainPage();
+      mainPage("women");
     });
 
     router.on("men", () => {
-      manMainPage();
+      mainPage("men");
     });
 
-    // setTimeout(() => {
-    //   router.navigate("men");
-    // }, 3000);
+    router.on("/:gender/:category", categoryPage);
 
-    // setTimeout(() => {
-    //   router.navigate("women");
-    // }, 6000);
+    router.on("search", (data) => {
+      console.log(data.params.value);
+    });
   } catch (e) {
+    console.warn(e);
     createElement(
       "h2",
       {
