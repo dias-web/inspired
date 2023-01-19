@@ -4,7 +4,7 @@ import { router } from "../router";
 export const renderPagination = (wrapperPagination, page, pages, count) => {
   wrapperPagination.textContent = "";
 
-  createElement(
+  const paginationList = createElement(
     "ul",
     {
       className: "pagination__list",
@@ -36,7 +36,7 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
         className: "pagination__item",
       },
       {
-        parent: wrapperPagination,
+        parent: paginationList,
         append: createElement("a", {
           textContent: n,
           href: `${router.getCurrentLocation().url}?page=${n}`,
@@ -55,7 +55,7 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
         className: `pagination__arrow pagination__arrow_start 
         ${!isNotStart ? "pagination__arrow_disabled" : ""}`,
         href: `${router.getCurrentLocation().url}?page=${1}`,
-        textContent: "start",
+        textContent: "",
         ariaLabel: "В начало",
       },
       {
@@ -68,7 +68,7 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
           className: `pagination__arrow pagination__arrow_end
           ${isEnd ? "pagination__arrow_disabled" : ""}`,
           href: `${router.getCurrentLocation().url}?page=${pages}`,
-          textContent: "end",
+          textContent: "",
           ariaLabel: "В конец",
         },
         {
