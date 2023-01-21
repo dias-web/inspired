@@ -1,5 +1,5 @@
 import { createElement } from "../utils/createElement";
-import { DATA } from "../const";
+import { DATA, footer } from "../const";
 
 const createFooterCategory = () => {
   const footerCategory = createElement("div", {
@@ -79,7 +79,6 @@ const createFooterCategory = () => {
 };
 
 export const renderFooter = () => {
-  const footer = document.querySelector(".footer");
   footer.textContent = "";
 
   const container = createElement(
