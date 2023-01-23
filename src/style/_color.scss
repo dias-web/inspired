@@ -3,10 +3,12 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
+  display: block;  // new
 
   &_check {
     border: 0.4px solid $gray;
   }
+
   &:after {
     content: '';
     position: absolute;
@@ -17,5 +19,5 @@
     height: 12px;
     border-radius: 50%;
   }
-  
+
 }
