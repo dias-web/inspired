@@ -15,7 +15,7 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
   );
 
   const isNotStart = page - Math.floor(count / 2) > 1;
-  const isEnd = page + Math.floor(count / 2) > pages;
+  const isEnd = page + Math.floor(count / 2) >= pages;
 
   if (count > pages) {
     count = pages;
@@ -23,6 +23,7 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
 
   for (let i = 0; i < count; i++) {
     let n = i + 1;
+
     if (isNotStart) {
       if (isEnd) {
         n = pages - count + i + 1;
@@ -30,6 +31,7 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
         n = page - Math.floor(count / 2) + i;
       }
     }
+
     createElement(
       "li",
       {
@@ -40,9 +42,8 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
         append: createElement("a", {
           textContent: n,
           href: getUrl({ page: n }),
-          className: `pagination__link ${
-            page === n ? "pagination__link_active" : ""
-          }`,
+          className: `pagination__link 
+          ${page === n ? "pagination__link_active" : ""}`,
         }),
       }
     );
@@ -52,14 +53,21 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
     createElement(
       "a",
       {
-        className: `pagination__arrow pagination__arrow_start 
-        ${!isNotStart ? "pagination__arrow_disabled" : ""}`,
+        className: `pagination__arrow pagination__arrow_start
+          ${!isNotStart ? "pagination__arrow_disabled" : ""}`,
         href: getUrl({ page: 1 }),
-        textContent: "",
+        tabIndex: !isNotStart ? "-1" : "0",
+        innerHTML: `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 15.06L10.9096 12L14 8.94L13.0486 8L9 12L13.0486 16L14 15.06Z" fill="currentColor"/>
+          </svg>
+        `,
         ariaLabel: "В начало",
       },
       {
-        parent: wrapperPagination,
+        cb(link) {
+          wrapperPagination.prepend(link);
+        },
       }
     ),
       createElement(
@@ -68,12 +76,15 @@ export const renderPagination = (wrapperPagination, page, pages, count) => {
           className: `pagination__arrow pagination__arrow_end
           ${isEnd ? "pagination__arrow_disabled" : ""}`,
           href: getUrl({ page: pages }),
-          textContent: "",
+          tabIndex: isEnd ? "-1" : "0",
+          innerHTML: `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 15.06L13.0904 12L10 8.94L10.9514 8L15 12L10.9514 16L10 15.06Z" fill="currentColor"/>
+          </svg>
+        `,
           ariaLabel: "В конец",
         },
-        {
-          parent: wrapperPagination,
-        }
+        { parent: wrapperPagination }
       );
   }
 };

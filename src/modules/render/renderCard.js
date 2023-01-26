@@ -1,16 +1,4 @@
 import { API_URL, DATA, card } from "../const";
-/*
-import {
-  addProductCart,
-  calcTotalPrice,
-  cartGoodsStore,
-} from "../controllers/cartController";
-
-import {
-  getFavorite,
-  handlerFavorite,
-} from "../controllers/favoriteController";
-*/
 import { createElement } from "../utils/createElement";
 import { renderCount } from "./renderCount";
 
