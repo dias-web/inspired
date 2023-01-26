@@ -1,7 +1,6 @@
 .cart {
   margin-bottom: 90px;
-  display: none;
-
+  
   @include tablet {
     margin-bottom: 60px;
   }
