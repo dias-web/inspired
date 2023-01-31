@@ -1,4 +1,4 @@
-import { countController } from "../controllers/countController";
+//import { countController } from '../controllers/countController';
 import { createElement } from "../utils/createElement";
 
 export const renderCount = (count, className, returnCount = () => {}) => {
@@ -53,7 +53,7 @@ export const renderCount = (count, className, returnCount = () => {}) => {
     }
   );
 
-  countController(minus, number, plus, input, returnCount);
+  //countController(minus, number, plus, input, returnCount);
 
   return control;
 };

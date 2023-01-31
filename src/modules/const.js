@@ -3,12 +3,12 @@ export const DATA = {};
 export const API_URL = "https://ruby-general-longship.glitch.me";
 export const TITLE = {
   women: {
-    title: "Новая коллекция Бюстгальтер-балконет",
+    title: "Новая коллекция Бюстгальтер-балконет ",
     id: "2269903069",
   },
   men: {
     title: "Боксеры из новой коллекции",
-    id: "4462633987",
+    id: "4413664778",
   },
 };
 

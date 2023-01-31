@@ -1,5 +1,4 @@
 .footer {
-
   &__container {
     padding-top: 51px;
     padding-bottom: 24px;
@@ -15,12 +14,14 @@
       grid-template-columns: 1fr 1fr 1fr;
       padding-top: 31px;
     }
+
     @include tablet {
       grid-template-columns: 1fr 2fr 1fr;
       padding-top: 25px;
       padding-bottom: 16px;
-      gap-row: 17px;
+      gap-row: 17px
     }
+
     @include mobile {
       grid-template-columns: 1fr max-content;
       grid-template-areas: 
@@ -28,34 +29,36 @@
         'contacts contacts'
         'development development'
         'copyright copyright';
-      padding-top: 17px;
+      padding-top: 17px;    
       gap: 24px;
     }
   }
+
   &__item {
-  
     &_category {
       grid-area: category;
     }
+
     &_social {
       grid-area: social;
       justify-self: center;
     }
-    
+
     &_contacts {
       grid-area: contacts;
+
     }
-    
+
     &_copyright {
       grid-area: copyright;
       align-self: end;
     }
-    
+
     &_development {
       grid-area: development;
+
     }
   }
-  
   &__title {
     font-weight: 400;
     font-size: 18px;
@@ -72,14 +75,12 @@
       line-height: 17px;
     }
   }
-  
+
   &__link {
-    transition: color 0.3s ease-in-out;
+    transition: color .3s ease-in-out;
 
     &:hover {
       color: $gray;
     }
   }
-
 }
-

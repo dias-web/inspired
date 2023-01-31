@@ -4,7 +4,6 @@
   margin-bottom: 80px;
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
 
   @include tablet {
     margin-bottom: 64px;
@@ -15,35 +14,36 @@
   }
 
   &__women {
-    background-image: url('../img/bg-woman.jpg');
+    background-image: url('../img/bg-women.jpg');
 
     @include laptop {
-      background-image: url('../img/bg-woman-laptop.jpg');
+      background-image: url('../img/bg-laptop-women.jpg');
     }
 
     @include tablet {
-      background-image: url('../img/bg-woman-tablet.jpg');
+      background-image: url('../img/bg-tablet-women.jpg');
     }
 
     @include mobile {
-      background-image: url('../img/bg-woman-mobile.jpg');
+      background-image: url('../img/bg-mobile-women.jpg');
     }
   }
 
   &__men {
-    background-image: url('../img/bg-man.jpg');
-
+    background-image: url('../img/bg-men.jpg');
     @include laptop {
-      background-image: url('../img/bg-man-laptop.jpg');
+      background-image: url('../img/bg-laptop-men.jpg');
     }
+
     @include tablet {
-      background-image: url('../img/bg-man-tablet.jpg');
+      background-image: url('../img/bg-tablet-men.jpg');
     }
+
     @include mobile {
-      background-image: url('../img/bg-man-mobile.jpg');
+      background-image: url('../img/bg-mobile-men.jpg');
     }
   }
-  
+
   &__content {
     max-width: 590px;
     padding: 172px 0 86px;
@@ -52,12 +52,12 @@
       max-width: 410px;
       padding: 156px 0 50px;
     }
-  
+
     @include mobile {
-      max-width: 360px;
       padding: 76px 0 24px;
     }
   }
+
   &__title {
     font-weight: 400;
     font-size: 44px;
@@ -75,6 +75,7 @@
       margin-bottom: 16px;
     }
   }
+
   &__link {
     display: inline-block;
     padding: 14px 40px;

@@ -1,49 +1,48 @@
-import { hero, TITLE } from "../const";
-import { createElement } from "../utils/createElement";
+import { TITLE, hero } from '../const';
+import { createElement } from '../utils/createElement';
 
-const container = createElement("div", {
-  className: "container",
+const container = createElement('div', {
+  className: 'container',
 });
 
 const content = createElement(
-  "div",
+  'div',
   {
-    className: "hero__content",
+    className: 'hero__content',
   },
   {
     parent: container,
-  }
+  },
 );
 
 const titleElem = createElement(
-  "h2",
+  'h2',
   {
-    className: "hero__title",
+    className: 'hero__title',
   },
-  {
-    parent: content,
-  }
+  { parent: content },
 );
 
 const heroLink = createElement(
-  "a",
+  'a',
   {
-    className: "hero__link",
-    textContent: "Перейти",
+    className: 'hero__link',
+    textContent: 'Перейти',
   },
-  {
-    parent: content,
-  }
+  { parent: content },
 );
 
-export const renderHero = (gender) => {
-  if (!gender) {
-    hero.style.display = "none";
+export const renderHero = ({gender, render}) => {
+
+  if (!render) {
+    hero.style.display = 'none';
     return;
   }
 
-  hero.style.display = "";
+  hero.style.display = '';
+
   hero.className = `hero hero__${gender}`;
+
   hero.append(container);
 
   titleElem.textContent = TITLE[gender].title;

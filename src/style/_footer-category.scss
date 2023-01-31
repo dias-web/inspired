@@ -1,15 +1,16 @@
 .footer-category {
-
   &__title {
     margin-bottom: 24px;
 
     @include tablet {
       margin-bottom: 16px;
     }
+
     @include mobile {
       margin-bottom: 8px;
     }
   }
+
   &__list {
     display: flex;
     gap: 80px;
@@ -23,7 +24,7 @@
       gap: 7px;
     }
   }
-    
+
   &__subtitle {
     font-weight: 600;
     font-size: 14px;
@@ -36,6 +37,7 @@
       margin-bottom: 0;
     }
   }
+
   &__sublist {
     display: flex;
     flex-direction: column;
@@ -47,4 +49,5 @@
       display: none;
     }
   }
+
 }

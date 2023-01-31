@@ -1,6 +1,11 @@
 import { API_URL, order } from "../const";
-//import { calcTotalPrice, cartGoodsStore, clearCart, getCart } from '../controllers/cartController';
-//import { sendOrder } from '../controllers/orderController';
+import {
+  calcTotalPrice,
+  cartGoodsStore,
+  clearCart,
+  getCart,
+} from "../controllers/cartController";
+import { sendOrder } from "../controllers/orderController";
 import { createElement } from "../utils/createElement";
 import { router } from "../utils/router";
 
@@ -143,7 +148,7 @@ const showOrderInfo = (data) => {
     "p",
     {
       className: "modal__total-price",
-      textContent: "руб ",
+      textContent: "тг ",
     },
     {
       parent: cartTotal,

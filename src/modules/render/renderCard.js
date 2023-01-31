@@ -1,4 +1,13 @@
 import { API_URL, DATA, card } from "../const";
+import {
+  addProductCart,
+  calcTotalPrice,
+  cartGoodsStore,
+} from "../controllers/cartController";
+import {
+  getFavorite,
+  handlerFavorite,
+} from "../controllers/favoriteController";
 import { createElement } from "../utils/createElement";
 import { renderCount } from "./renderCount";
 
@@ -70,6 +79,8 @@ export const renderCard = ({ data, render }) => {
             }
           );
         });
+
+        //addProductCart()
       },
     }
   );
@@ -202,11 +213,11 @@ export const renderCard = ({ data, render }) => {
   form.insertAdjacentHTML(
     "beforeend",
     `
-    <div class="card__description">
-      <p class="card__subtitle card__description-title">Описание</p>
+  <div class="card__description">
+    <p class="card__subtitle card__description-title">Описание</p>
 
-      <p class="card__description-text">${description}</p>
-    </div>
+    <p class="card__description-text">${description}</p>
+  </div>
   `
   );
 
@@ -240,3 +251,17 @@ export const renderCard = ({ data, render }) => {
     { parent: form, appends: [count, addCart, favoriteBtn] }
   );
 };
+
+/*
+
+
+  
+
+
+
+      <button class="card__add-cart main-button" type="submit">В корзину</button>
+      <button class="card__favorite favorite" aria-label="" type="button" data-id="321654"></button>
+    </div>
+  </form>
+</div>
+*/

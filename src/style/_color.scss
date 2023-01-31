@@ -5,8 +5,12 @@
   border-radius: 50%;
   display: block;
 
+  // &:has(:checked) {
+  //   border: 0.4px solid $gray; 
+  // }
+
   &_check {
-    border: 0.4px solid $gray;
+    border: 0.4px solid $gray; 
   }
 
   &:after {

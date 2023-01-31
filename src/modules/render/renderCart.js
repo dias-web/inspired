@@ -113,6 +113,8 @@ export const renderCart = ({ render }) => {
       }
     );
 
+    /* <button class="item__del" aria-label="Удалить товар из корзины"></button> */
+
     const countBlock = renderCount(product.count, "item__count", (count) => {
       product.count = count;
       addProductCart(product, true);
@@ -138,7 +140,7 @@ export const renderCart = ({ render }) => {
     "p",
     {
       className: "cart__total-price",
-      textContent: "руб ",
+      textContent: "тг ",
     },
     {
       parent: cartTotal,
@@ -155,3 +157,18 @@ export const renderCart = ({ render }) => {
     }
   );
 };
+
+/*
+
+
+
+              <div class="count item__count">
+        <button class="count__item count__minus">-</button>
+        <span class="count__item count__number">1</span>
+        <button class="count__item count__plus">+</button>
+        <input type="hidden" name="count" value="1">
+      </div>
+
+
+
+*/

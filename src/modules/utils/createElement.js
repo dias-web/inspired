@@ -1,7 +1,7 @@
 export const createElement = (
   tag,
   attr,
-  { append, appends, parent, cb } = {}
+  { append, appends, parent, cb } = {},
 ) => {
   const element = document.createElement(tag);
 
@@ -21,7 +21,7 @@ export const createElement = (
     parent.append(element);
   }
 
-  if (cb && typeof cb === "function") {
+  if (cb && typeof cb === 'function') {
     cb(element);
   }
 

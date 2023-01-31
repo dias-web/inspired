@@ -22,7 +22,6 @@ $mobile: 540px;
 
 @mixin mobile {
   @media (max-width: #{$mobile}) {
-    @content
+    @content;
   }
 }
-

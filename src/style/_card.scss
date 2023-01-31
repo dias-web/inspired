@@ -205,11 +205,11 @@
 
   &__count {
     margin-right: 24px;
-
+    
     @include tablet {
       margin-right: 20px;
     }
-
+    
     @include mobile {
       margin-right: 10px;
     }
