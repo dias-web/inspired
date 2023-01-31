@@ -1,24 +1,24 @@
-import { DATA, footer } from '../const';
-import { createElement } from '../utils/createElement';
+import { DATA, footer } from "../const";
+import { createElement } from "../utils/createElement";
 
 const createFooterCategory = () => {
-  const footerCategory = createElement('div', {
-    className: 'footer__item footer__item_category footer-category',
+  const footerCategory = createElement("div", {
+    className: "footer__item footer__item_category footer-category",
   });
 
   createElement(
-    'h2',
+    "h2",
     {
-      className: 'footer__title footer-category__title',
-      textContent: 'Каталог',
+      className: "footer__title footer-category__title",
+      textContent: "Каталог",
     },
-    { parent: footerCategory },
+    { parent: footerCategory }
   );
 
   const footerCategoryList = createElement(
-    'ul',
+    "ul",
     {
-      className: 'footer-category__list'
+      className: "footer-category__list",
     },
     {
       parent: footerCategory,
@@ -27,72 +27,70 @@ const createFooterCategory = () => {
 
   for (const key in DATA.navigation) {
     const footerCategoryItem = createElement(
-      'li',
+      "li",
       {
-        className: 'footer-category__item'
+        className: "footer-category__item",
       },
       {
         parent: footerCategoryList,
         append: createElement(
-          'h3',
+          "h3",
           {
-            className: 'footer-category__subtitle',
+            className: "footer-category__subtitle",
           },
           {
-            append: createElement('a', {
-              className: 'footer__link',
+            append: createElement("a", {
+              className: "footer__link",
               href: `#/${key}`,
-              textContent: DATA.navigation[key].title
-            })
+              textContent: DATA.navigation[key].title,
+            }),
           }
-        )
+        ),
       }
     );
 
     createElement(
-      'ul',
+      "ul",
       {
-        className: 'footer-category__sublist',
+        className: "footer-category__sublist",
       },
       {
         parent: footerCategoryItem,
-        appends: DATA.navigation[key].list.map(item =>
+        appends: DATA.navigation[key].list.map((item) =>
           createElement(
-            'li',
+            "li",
             {
-              className: 'footer__link'
+              className: "footer__link",
             },
             {
-              append: createElement('a', {
-                className: 'footer__link',
+              append: createElement("a", {
+                className: "footer__link",
                 href: `#/${key}/${item.slug}`,
                 textContent: item.title,
               }),
             }
           )
-        )
+        ),
       }
-    )
-  };
-
-  
+    );
+  }
 
   return footerCategory;
 };
 
 export const renderFooter = () => {
-  footer.textContent = '';
+  footer.textContent = "";
 
   const container = createElement(
-    'div',
+    "div",
     {
-      className: 'container footer__container',
+      className: "container footer__container",
     },
-    { parent: footer, append: createFooterCategory() },
+    { parent: footer, append: createFooterCategory() }
   );
 
   container.insertAdjacentHTML(
-    'beforeend',
+    "beforeend",
     `
       <div class="footer__item footer__item_social footer-social">
         <h2 class="footer__title footer-social__title">Связаться с нами</h2>
@@ -120,7 +118,7 @@ export const renderFooter = () => {
 
       <div class="footer__item footer__item_contacts footer-contacts">
         <a class="footer__link" href="mailto:Inspired@gmail.com">Inspired@gmail.com</a>
-        <a class="footer__link" href="tel:89304902620">8 930 490 26 20</a>
+        <a class="footer__link" href="tel:87088268340">8 708 826 83 40</a>
       </div>
 
       <div class="footer__item footer__item_copyright footer-copyright">
@@ -134,10 +132,10 @@ export const renderFooter = () => {
             </li>
 
             <li class="footer-development__item">
-              Developer: <a class="footer__link" href="https://t.me/Quper">Maksim Leskin</a>
+              Developer: <a class="footer__link" href="https://t.me/seven_riverz">Dias Ilkenov</a>
             </li>
           </ul>
       </div>
-    `,
+    `
   );
 };
