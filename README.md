@@ -1,4 +1,8 @@
-# WEBPACK
+## Интернет магазин нижнего белья.
+
+https://inspired-dias-web.vercel.app/
+
+## WEBPACK
 
 Для установки пакетов используйте команду npm install
 
